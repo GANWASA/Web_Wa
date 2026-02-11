@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me | Chonnipa Sachon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div id="floating-container"></div>
+
+<style>
+  .floating {
+    position: fixed;
+    color: black;
+    font-size: 18px;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    from {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  function createFloating() {
+    const item = document.createElement("div");
+    item.classList.add("floating");
+
+    // เปลี่ยนเป็น "★" หรือ "♥"
+    item.textContent = "★";
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = Math.random() * 15 + 10 + "px";
+    item.style.animationDuration = Math.random() * 5 + 4 + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => {
+      item.remove();
+    }, 8000);
+  }
+
+  setInterval(createFloating, 300);
+</script>
+<script>
+  function createFloating() {
+    const item = document.createElement("div");
+    item.classList.add("floating");
+
+    // เปลี่ยนเป็น "★" หรือ "♥"
+    item.textContent = "♥";
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = Math.random() * 15 + 10 + "px";
+    item.style.animationDuration = Math.random() * 5 + 4 + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => {
+      item.remove();
+    }, 8000);
+  }
+
+  setInterval(createFloating, 300);
+</script>
+<body>
+    <canvas id="fireworksCanvas"></canvas>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html" class="active">ABOUT</a>
+        <a href="friends.html">FRIENDS</a>
+        <a href="contactt.html">CONTACT</a>
+    </nav>
+
+    <div class="container">
+        <section class="page-content">
+            <div class="text-side">
+                <h2>ABOUT ME.</h2>
+                <p>My name is Chonnipa Sachon<p></p>my nickname is Wa. </p> was born on July 20, 2007, <p></p> I am currently 18 years old. I am a Muslim.</p>
+            </div>
+            <div class="image-side">
+                <img src="profile.jpg" alt="Profile">
+            </div>
+        </section>
+    </div>
+    <script src="fireworks.js"></script>
+</body>
+</html>

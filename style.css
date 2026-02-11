@@ -1,0 +1,97 @@
+body {
+    background-color: #fdfaf1;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#fireworksCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #ff6b6b;
+}
+
+/* Layout */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+}
+
+.text-side { flex: 1; }
+.image-side img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px #000;
+}
+
+h1 { font-size: 4rem; margin: 0; }
+h2 { font-size: 2.5rem; border-bottom: 4px solid #000; display: inline-block; }
+
+.contact-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .page-content { flex-direction: column; text-align: center; }
+}
+/* ปรับ container ให้ชิดด้านบนมากขึ้น */
+.container {
+    max-width: 900px;
+    margin: 20px auto; /* ลด margin ด้านบนลงจาก 50px เป็น 20px */
+    padding: 20px;
+    text-align: center;
+}
+
+/* จัดระเบียบหน้า Contact ให้ทุกอย่างอยู่กลาง */
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: flex-start; /* ให้เริ่มจากด้านบน */
+    min-height: 60vh; /* เพิ่มพื้นที่ด้านล่างเพื่อให้ดูไม่อึดอัด */
+}
+
+/* ปรับหัวข้อ h2 ในหน้า contact */
+.contact-page h2 {
+    margin-top: 0;
+    margin-bottom: 30px; /* เพิ่มระยะห่างระหว่างหัวข้อกับบัตรติดต่อ */
+}

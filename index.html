@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Chonnipa Sachon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div id="floating-container"></div>
+
+<style>
+  .floating {
+    position: fixed;
+    color: black;
+    font-size: 18px;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    from {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  function createFloating() {
+    const item = document.createElement("div");
+    item.classList.add("floating");
+
+    // เปลี่ยนเป็น "★" หรือ "♥"
+    item.textContent = "★";
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = Math.random() * 15 + 10 + "px";
+    item.style.animationDuration = Math.random() * 5 + 4 + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => {
+      item.remove();
+    }, 8000);
+  }
+
+  setInterval(createFloating, 300);
+</script>
+<script>
+  function createFloating() {
+    const item = document.createElement("div");
+    item.classList.add("floating");
+
+    // เปลี่ยนเป็น "★" หรือ "♥"
+    item.textContent = "♥";
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = Math.random() * 15 + 10 + "px";
+    item.style.animationDuration = Math.random() * 5 + 4 + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => {
+      item.remove();
+    }, 8000);
+  }
+
+  setInterval(createFloating, 300);
+</script>
+
+<body>
+    <canvas id="fireworksCanvas"></canvas>
+    <nav>
+        <a href="index.html" class="active">HOME</a>
+        <a href="bio.html">ABOUT</a>
+        <a href="friends.html">FRIENDS</a>
+        <a href="contactt.html">CONTACT</a>
+    </nav>
+
+    <div class="container">
+        <header class="hero-section">
+            <div class="sparkle">✦</div>
+            <h1>CHONNIPA SACHON</h1>
+            <p>Welcome to my personal website</p>
+        </header>
+    </div>
+    <script src="fireworks.js"></script>
+</body>
+</html>
